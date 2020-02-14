@@ -1,0 +1,245 @@
+/* Custom properties */
+:root {
+    --bgPrimary:#C2185B;
+    --bgPrimaryDark:rgb(156, 10, 69);
+    --bgSecondary:#FFC107;
+    
+    --primaryFont: font-family:'Arial', Helvetica, sans-serif;
+    --secondaryFont:font-family: 'Poppins', sans-serif;
+}
+html{
+    box-sizing: border-box;
+}
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+body{
+    background-color: var(--bgPrimary);
+    font-family: var(--primaryFont);
+    
+}
+
+/* Globales */
+
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;
+    
+}
+.sombra{
+    -webkit-box-shadow: 0px 7px 19px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 7px 19px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 19px -2px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+.bg-amarillo{
+    background-color: var(--bgSecondary);
+}
+.bg-blanco{
+    background-color: white;
+}
+.barra{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+}
+h1,h2{
+    font-family: var(--secondaryFont);
+    text-align: center;
+    margin: 0;
+}
+h1{
+    padding: 20px;
+    color: white;
+}
+h2{
+    font-size: 2rem;
+    color: var(--bgPrimary);
+}
+.contenedor-barra{
+    background-color: var(--bgPrimaryDark);
+}
+/* Botones */
+.btn{
+    font-size: 2rem;
+    text-decoration: none;
+}
+.btn-borrar{
+    color: var(--bgPrimary);
+    cursor: pointer;
+}
+.btn-editar{
+    color: var(--bgSecondary);
+}
+.btn-volver{
+    background-color: var(--bgSecondary);
+    border-radius: 5px;
+    text-align:center;
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: .5rem;
+
+}
+
+/* Formulario */
+
+form{
+    padding: 3rem;
+    margin-top: 2rem;
+}
+
+form legend{
+    font-family: var(--secondaryFont);
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+legend span{
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: block;
+    clear: both;
+}
+
+
+@media (min-width:768px){
+    
+    .campos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .campo{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    
+}
+
+.campo{
+    padding: 0.5rem 0;
+}
+
+.campo label{
+    font-size: 1,2rem;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"]{
+    width: 100%;
+    border: none;
+    padding: .5rem;
+    height: 3rem;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+}
+.enviar{
+    display: flex;
+    justify-content: flex-end;
+}
+.campo input[type="submit"]{
+    background-color: var(--bgPrimary);
+    border: none;
+    color: white;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-color .5s ease-in-out;
+    flex: 1;
+}
+.campo input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--bgPrimaryDark);
+}
+@media (min-width:768px){   
+.campo input[type="submit"]{
+    flex: 0 0 auto ;
+}
+}
+
+/* Listado de contactos */
+.contactos{
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.contenedor-contactos{
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+.total-contactos{
+    font-family: var(--secondaryFont);
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--bgPrimary);
+    font-size: 2rem;
+}
+.total-contactos span{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.buscador{
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+.buscador:focus{
+    outline: none;
+}
+.contenedor-tabla{
+    overflow: scroll;
+}
+.listado-contactos{
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+
+}
+.listado-contactos thead{
+    background-color: var(--bgPrimary);
+    color: white;
+    text-transform: uppercase;
+}
+.listado-contactos thead th{
+    padding: 1rem 0;
+}
+.listado-contactos tbody td{
+    padding: .5rem;
+}
+.listado-contactos tbody td:nth-child(4){
+    text-align: center;
+}
+.listado-contactos button{
+    background-color: transparent!important;
+    border: none;
+}
+
+/* Notificaciones */
+.notificacion{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    
+}
+.visible{
+    opacity: 1;
+}
+
+/* Colores notificación */
+
+.correcto{
+    background-color: rgb(179, 241, 117);
+    color: green;
+}
+.error{
+    background-color: rgb(238, 148, 166);
+    color: rgb(163, 0, 33);
+}
